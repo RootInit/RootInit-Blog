@@ -1,0 +1,27 @@
+<div class="sideBar">
+    <section class="sectionAbout">
+        <h2>About</h2>
+        <p>
+            Join me on my slightly chaotic learning journey as I attempt to make
+            sense of coding, circuits, and engineering. Let's learn, fail, and
+            grow together!
+        </p>
+        <p>
+            Support a free and
+            <a href="https://github.com/RootInit/RootInit-Blog">open-source</a>&nbsp;internet! This blog will never have
+            ads, and is functional
+            with JS disabled.
+        </p>
+    </section>
+    <section class="sectionTags">
+        <h2>Tags</h2>
+        <div class="articleTagContainer">
+            <a class="articleTag" href="#">
+                <object type="image/svg+xml" data="assets/icons/tags/code.svg"></object>Programming</a>
+            <a class="articleTag" href="#">
+                <object type="image/svg+xml" data="assets/icons/tags/java.svg"></object>Java</a>
+            {{range .SideBar.Tags}}<a class="articleTag" href="{{.Link}}"><object
+                    data="{{.Icon}}"></object>{{.Name}}</a>{{end}}
+        </div>
+    </section>
+</div>

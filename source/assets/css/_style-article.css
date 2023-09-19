@@ -1,0 +1,151 @@
+/* ---------- Article ---------- */
+.articleContainer {
+    width: 100%;
+  }
+  
+  .articleHeader {
+    border-bottom: .1rem solid;
+    padding-bottom: .5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .articleInfo {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .articleInfo span {
+    display: flex;
+  }
+  
+  .articleInfo svg, .articleInfo object {
+    height: 12pt;
+    margin-right: .5em;
+  }
+  
+  .articleBody h1, .articleBody h2, .articleBody h3 {
+    display: inline-block;
+    font-family: 'Source Sans Pro';
+  }
+    
+  .articleBody .w100 {
+    width: 100%;
+    margin-inline: none;
+  }
+  .articleBody .w50 {
+    width: 50%;
+  }
+  .articleBody .w75 {
+    width: 75%;
+  }
+  .articleBody .w33 {
+    width: 33%;
+  }
+  .articleBody .w25 {
+    width: 25%;
+  }
+  .articleBody .center {
+    margin-inline: auto;
+  }
+  .articleBody .right {
+    float: right;
+    margin-right: 0;
+  }
+  .articleBody .left {
+    float: left;
+    margin-left: 0;
+  }
+  
+  /* ---------- Article Nav ---------- */
+  .articleNav {
+    width: 100%;
+    display: inline-flex;
+    margin-top: 2em;
+  }
+  
+  .articleNavLink {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Source Code Pro';
+    font-size: 16pt;
+    font-weight: 600;
+    color: var(--body-color);
+    border: .1rem solid;
+    padding: .5em;
+  }
+  
+  .articleNavLink:hover {
+    color: var(--bg-color);
+    background-color: var(--body-color);
+  }
+  
+  .articleNavLink svg {
+    padding-top: .1em;
+    height: 16pt;
+  }
+  
+  @media (max-width: 550px) {
+    .articleNavLink {
+      justify-content: center;
+    }
+    .articleNavLink svg {
+      display: none;
+    }
+  }
+  
+  /* ---------- Article Comments ---------- */
+  .commentSection {
+    margin-top: 2em;
+  }
+  
+  .commentSection > h1 {
+    margin-bottom: .5em;
+  }
+  
+  .articleComment {
+    border: .1rem solid;
+    padding: 1em;
+    padding-bottom: 0;
+  }
+  
+  .commentInfo {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .commentInfo > div {
+    display: flex;
+    vertical-align: baseline;
+    column-gap: .5em;
+    font-weight: 800;
+    height: 1.5em;
+  }
+  
+  .commentInfo > div > svg {
+    height: 100%;
+    width: auto;
+  }
+  
+  .commentNav {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+  }
+  
+  .commentReplyLink {
+    font-family: 'Source Code Pro';
+  }
+  
+  .commentReplyHolder {
+    margin-right: -1em;
+  }
+  
+  .commentReplyHolder .articleComment {
+    border-right: none;
+    border-bottom: none;
+  }
+  

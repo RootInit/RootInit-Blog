@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   id="svg2"
+   viewBox="0 0 59.201173 41.937499"
+   version="1.0"
+   width="59.201172"
+   height="41.9375"
+   sodipodi:docname="diode.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="19.138135"
+     inkscape:cx="29.600586"
+     inkscape:cy="20.979056"
+     inkscape:window-width="2560"
+     inkscape:window-
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs1" />
+  <path
+     id="path13492"
+     style="color:#000000;fill:#000000;stroke:none;stroke-linecap:square;-inkscape-stroke:none"
+     d="m 31.466797,0 -6,3.9003906 2.400391,1.1992188 -2.5,4.9003906 -0.400391,0.800781 1.599609,0.798828 0.400391,-0.798828 2.5,-4.9003904 2.300781,1.1992188 z m 8.5,4.4003906 -5.900391,3.7988282 2.400391,1.2011718 -2.5,4.9003904 -0.400391,0.798828 1.59961,0.800782 0.40039,-0.800782 2.400391,-4.90039 2.400391,1.201172 z M 14.076172,7.8613281 V 23.318359 H 1.5800781 0 v 3.16211 H 1.5800781 14.076172 V 41.9375 l 2.726562,-1.341797 26.97461,-13.296875 v 11.601563 1.888671 h 3.779297 V 38.900391 26.421875 h 10.123047 1.521484 V 23.378906 H 57.679688 47.556641 V 10.900391 9.0097656 h -3.779297 v 1.8906254 11.603515 z"
+     sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccc" />
+  <metadata
+     id="metadata9">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

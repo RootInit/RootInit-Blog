@@ -1,0 +1,101 @@
+DEFAULT: tag_icons/asterisk.svg #Default Tag Icon
+
+3D Printing: tag_icons/3d_nozzle.svg
+Alpine: tag_icons/alpine_linux.svg
+Android: tag_icons/android.svg
+Apache: tag_icons/apache.svg
+Arch: tag_icons/arch_linux.svg
+Archive: tag_icons/archive.svg
+Arduino: tag_icons/arduino.svg
+Art: tag_icons/paint.svg
+AWS: tag_icons/aws.svg
+Azure: tag_icons/azure.svg
+Bash: tag_icons/bash.svg
+Bluetooth: tag_icons/bluetooth.svg
+C Language: tag_icons/c.svg
+C++: tag_icons/c++.svg
+CAD: tag_icons/pen_ruler.svg
+Cloud: tag_icons/upload-lightning.svg
+Configuration: tag_icons/sliders.svg
+Database: tag_icons/database.svg
+Debian: tag_icons/debian_linux.svg
+Diode: tag_icons/diode.svg
+Docker: tag_icons/docker.svg
+Documentation: tag_icons/book.svg
+Dot Env: tag_icons/dot_env.svg
+Embedded: tag_icons/cpu.svg
+Espressif: tag_icons/espressif.svg
+Fedora: tag_icons/fedora_linux.svg
+FPGA: tag_icons/cpu.svg
+FTP: tag_icons/upload-cloud.svg
+Git: tag_icons/git.svg
+Github: tag_icons/github.svg
+Gitlab: tag_icons/gitlab.svg
+Golang: tag_icons/golang.svg
+Graphene_OS: tag_icons/graphene_os.svg
+Hashing: tag_icons/hash.svg
+Homelab: tag_icons/server.svg
+Image Processing: tag_icons/image.svg
+Intellij: tag_icons/intellij.svg
+Java: tag_icons/java.svg
+Javascript: tag_icons/javascript.svg
+Jellyfin: tag_icons/jellyfin.svg
+JSON: tag_icons/file-text.svg
+KDE: tag_icons/kde.svg
+KdenLive: tag_icons/kdenlive.svg
+Kubernetes: tag_icons/kubernetes.svg
+LaTeX: tag_icons/type.svg
+Linux: tag_icons/linux.svg
+Lithium: tag_icons/battery-charging.svg
+Maps: tag_icons/open_street_maps.svg
+Monero: tag_icons/monero.svg
+MySQL: tag_icons/mysql.svg
+NAS: tag_icons/server.svg
+Networking: tag_icons/wifi.svg
+NFS: tag_icons/upload-cloud.svg
+NGINX: tag_icons/nginx.svg
+Nodejs: tag_icons/nodejs.svg
+OpenCV: tag_icons/camera.svg
+OpenStreetMaps: tag_icons/open_street_maps.svg
+Photography: tag_icons/camera.svg
+PostgreSQL: tag_icons/postgresql.svg
+Power Storage: tag_icons/battery-charging.svg
+Powershell: tag_icons/powershell.svg
+Privacy: tag_icons/eye.svg
+Programming: tag_icons/code.svg
+Proxmox: tag_icons/proxmox.svg
+Python: tag_icons/python.svg
+QEMU: tag_icons/qemu.svg
+Qubes: tag_icons/qubes_linux.svg
+SAMBA: tag_icons/upload-cloud.svg
+Self Hosted: tag_icons/cloud-off.svg
+Sensors: tag_icons/activity.svg
+Server: tag_icons/server.svg
+SFTP: tag_icons/upload-cloud.svg
+SQLite: tag_icons/sqlite.svg
+Steam: tag_icons/steam.svg
+Tails: tag_icons/tails_linux.svg
+Tampermonkey: tag_icons/tampermonkey.svg
+TensorFlow: tag_icons/tensorflow.svg
+Terminal: tag_icons/terminal.svg
+TeX: tag_icons/type.svg
+Text: tag_icons/file-text.svg
+TOR: tag_icons/tor.svg
+TrueNAS: tag_icons/truenas.svg
+Ubuntu: tag_icons/ubuntu_linux.svg
+User Data: tag_icons/users.svg
+User Interface: tag_icons/layout.svg
+Users: tag_icons/users.svg
+Userscript: tag_icons/tampermonkey.svg
+Video: tag_icons/video.svg
+Web Development: tag_icons/braces.svg
+Wifi: tag_icons/wifi.svg
+YAML: tag_icons/file-text.svg
+ZFS: tag_icons/folder.svg
+#Star: tag_icons/star.svg
+#Folder: tag_icons/folder.svg
+#Display: tag_icons/monitor.svg
+#RSS: tag_icons/rss.svg
+#Share: tag_icons/share.svg
+#Asterisk: tag_icons/asterisk.svg
+

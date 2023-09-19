@@ -1,0 +1,75 @@
+/* ---------- Side Bar ---------- */
+.sideBar {
+    min-width: 200px;
+    width: 30%;
+  }
+.mainBody {
+  width: 70%;
+}
+  
+  @media (max-width: 1000px) {
+    .sideBar {
+      width: 100%;
+    }
+    .mainBody {
+      width: 100%;
+    }
+    .sectionTags .articleTagContainer {
+     justify-content: center;
+   }
+  }
+
+  /* ---------- Article Search ---------- */
+  .articleSearchForm {
+    width: 100%;
+    display: flex;
+  }
+  
+  #articleSearchField {
+    padding-right: 0;
+    width: 100%;
+  }
+  
+  #articleSearchButton {
+    width: 5em;
+    padding: 1em;
+    border-left: none;
+    transition: none;
+  }
+  
+  #articleSearchButton > svg{
+    width: 100%;
+    height: 100%;
+  }
+
+/* ---------- Article Tags ---------- */
+  .articleTagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: .5em;
+  }
+  
+  .article + .articleTagContainer {
+    justify-content: center;
+  }
+  
+  .articleTag {
+    display: flex;
+    color: var(--body-color);
+    padding-inline: .3em;
+    border: .1rem solid;
+    border-radius: .5rem;
+    text-decoration: none;
+    align-content: center;
+    margin-top: .3em;
+    margin-bottom: .3em;
+  }
+  
+  .articleTag > svg, .articleTag > object {
+    margin-right: .2em;
+  }
+  
+  .articleTag:hover {
+    color: var(--bg-color);
+    background-color: var(--body-color);
+  }

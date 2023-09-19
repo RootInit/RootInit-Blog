@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html colorMode="dark" lang="en">
+
+<head>
+  <title>{{.Head.Title}}</title>
+  <meta property="og:title" content="{{.Head.Title}}" />
+
+  <meta name="description" content="{{.Head.Description}}" />
+  <meta property="og:description" content="{{.Head.Description}}" />
+
+  <link rel="canonical" href="{{.Head.CanonicalUrl}}" />
+  <meta property="og:url" content="{{.Head.CanonicalUrl}}" />
+  <meta property="og:type" content="article" />
+
+  {{if not (eq .Head.LinkPrev "")}}
+  <link rel="prev" href="{{.Head.LinkPrev}}" />
+  {{end}} {{if (eq .Head.LinkNext "")}}
+  <link rel="next" href="{{.Head.LinkNext}}" />
+  {{end}}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script src="/assets/js/highlight.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
+</head>
+
+<body>
+  {{ template "navbar.html" }}
+  <div class="pageContent">
+    {{ template "sidebar.html" }}
+    <div class="mainBody">
+      <section class="articleBody">
+        <div class="articleHeader">
+          <h1>{{.Primary.Title}}</h1>
+          <div class="articleInfo">
+            <span><object data="/assets/icons/calender.svg"></object>{{.Primary.Date}}</span>
+            <span><object data="/assets/icons/comment.svg"></object>{{ if (eq (len .Primary.Comments) 0) }}No Comments{{ else }}{{ len .Primary.Comments }}{{ end }}</span>
+          </div>
+        </div>
+        <div class="articleBody">
+          {{.Primary.Body}}
+        </div>
+        <div class="articleTagContainer">
+          {{ range .Primary.Tags}}
+          <a class="articleTag" href="{{.Link}}">
+            <object type="image/svg+xml" data="/assets/icons/tags/{{.Icon}}"></object>{{.Name}}</a>
+          {{ end }}
+        </div>
+      </section>
+      <div class="articleNav">
+        {{ if not (eq .Head.LinkPrev "") }}
+        <a class="articleNavLink" href="{{ .Head.LinkPrev }}">
+          <object type="image/svg+xml" data="/assets/icons/left_arrow.svg"></object>
+          Next Article<div></div></a>
+        {{ end }}
+        {{ if not (eq .Head.LinkNext "") }}
+        <a class="articleNavLink" href="{{ .Head.LinkNext }}">
+          <div></div>Next Article<object type="image/svg+xml" data="/assets/icons/right_arrow"></object>
+        </a>
+        {{ end }}
+      </div>
+      <section class="commentSection">
+        <h2>Comments</h2>
+        {{ template "comment.html" .Primary.Comments }}
+      </section>
+    </div>
+  </div>
+  {{ template "footer.html" . }}
+</body>
+
+</html>

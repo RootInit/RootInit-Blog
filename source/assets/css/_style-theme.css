@@ -1,0 +1,73 @@
+/* ---------- Site Theme ---------- */
+:root {
+    --font-emphasis: 'Source Code Pro';
+    --font-body: 'Source Sans Pro';
+  
+    --dark-bg: rgb(25,30,40);
+    --light-bg: #fff;
+  
+    --dark-body: rgb(200,200,200);
+    --light-body: var(--dark-bg);
+  
+    --dark-emphasis: #00b4d8;
+    --light-emphasis: #00527e;
+  
+    --dark-emphasis-secondary:#fff;
+    --light-emphasis-secondary: #afafaf;
+  
+    --dark-bg-secondary: #212631;
+    --light-bg-secondary: #d3d3d3;
+
+    --dark-bg-code: #002b36;
+    --light-bg-code: #fdf6e3;
+
+    --light-solarized-base:#586e75;
+    --dark-solarized-base :#93a1a1;
+
+    --solarized-yellow   : #b58900;
+    --solarized-orange   : #cb4b16;
+    --solarized-red      : #dc322f;
+    --solarized-magenta  : #d33682;
+    --solarized-violet   : #6c71c4;
+    --solarized-blue     : #268bd2;
+    --solarized-cyan     : #2aa198;
+    --solarized-green    : #719e07;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+    }
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+    }
+  }
+  
+  :root, [colorMode=light] {
+    --bg-color: var(--light-bg);
+    --body-color: var(--light-body);
+    --emphasis: var(--light-emphasis);
+    --emphasis-secondary: var(--light-emphasis-secondary);
+    --bg-secondary: var(--light-bg-secondary);
+    --bg-code: var(--light-bg-code);
+    --solarized-base: var(--light-solarized-base);
+
+  }
+  
+  [colorMode=dark] {
+    --bg-color: var(--dark-bg);
+    --body-color: var(--dark-body);
+    --emphasis: var(--dark-emphasis);
+    --emphasis-secondary: var(--dark-emphasis-secondary);
+    --bg-secondary: var(--dark-bg-secondary);
+    --bg-code: var(--dark-bg-code);
+    --solarized-base: var(--dark-solarized-base);
+  }
+  
+  :root {
+    background: var(--bg-color);
+    color: var(--body-color);
+    font-family: var(--font-body);
+    font-size: 12pt;
+  }

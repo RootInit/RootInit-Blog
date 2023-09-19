@@ -1,0 +1,27 @@
+  {{ range . }}
+    <div class="articleComment">
+      <!-- Comment info -->
+      <div class="commentInfo c">
+        <div class="commentName">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+          </svg>
+          <span>{{ .Username }}</span>
+        </div>
+        <span>{{ .Date }}</span>
+      </div>
+      
+      <!-- Comment body -->
+      <p>{{ .Body }}</p>
+      
+      <!-- Comment reply link -->
+      <div class="commentNav">
+        <a class="commentReplyLink" href="{{ .ReplyLink }}">Reply</a>
+      </div>
+      
+      <!-- Nested comments -->
+      <div class="commentReplyHolder">
+        {{ template "comment.html" .Replies }}
+      </div>
+    </div>
+  {{ end }}

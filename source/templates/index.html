@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html colorMode="dark" lang="en">
+
+<head>
+  <title>{{.Head.Title}}</title>
+  <meta property="og:title" content="{{.Head.Title}}" />
+
+  <meta name="description" content="{{.Head.Description}}" />
+  <meta property="og:description" content="{{.Head.Description}}" />
+
+  <link rel="canonical" href="{{.Head.CanonicalUrl}}" />
+  <meta property="og:url" content="{{.Head.CanonicalUrl}}" />
+  <meta property="og:type" content="article" />
+
+  {{if not (eq .Head.LinkPrev "")}}
+  <link rel="prev" href="{{.Head.LinkPrev}}" />
+  {{end}} {{if (eq .Head.LinkNext "")}}
+  <link rel="next" href="{{.Head.LinkNext}}" />
+  {{end}}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script src="/assets/js/highlight.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
+</head>
+
+<body>
+  {{ template "navbar.html" . }}
+  <div class="pageContent">
+    {{ template "sidebar.html" }}
+    <div class="mainBody">
+      <section class="articlesSection">
+        <h1>{{.Primary.Title}}</h1>
+        {{ range .Primary.Cards }}
+        <div class="articleCard" onclick="location.href='{{.Link}}'">
+          <img src="{{.Thumbnail}}">
+          <div class="articleCardContent">
+            <h2 class="articleCardTitle">{{.Title}}</h2>
+            <p class="articleCardBody">{{.Description}}<a href="#">... [read more]</a>
+            </p>
+            <div class="articleTagContainer">
+              {{ range .Tags}}
+              <a class="articleTag" href="{{.Link}}">
+                <object type="image/svg+xml" data="/assets/icons/tags/{{.Icon}}"></object>{{.Name}}</a>
+              {{ end }}
+            </div>
+            <div class="articleInfo">
+              <span><object data="/assets/icons/calender.svg"></object>{{.Date}}</span>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </section>
+      <div class="articleNav">
+        {{ if not (eq .Head.LinkPrev "") }}
+        <a class="articleNavLink" href="{{ .Head.LinkPrev }}">
+          <object type="image/svg+xml" data="/assets/icons/left_arrow.svg"></object>
+          Next Article<div></div></a>
+        {{ end }}
+        {{ if not (eq .Head.LinkNext "") }}
+        <a class="articleNavLink" href="{{ .Head.LinkNext }}"><div></div>Next Article<object type="image/svg+xml" data="/assets/icons/right_arrow"></object>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  {{ template "footer.html" . }}
+</body>
+</html>

@@ -1,0 +1,45 @@
+/* ---------- Article Card ---------- */
+.articleCard {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    column-gap: 1em;
+  }
+  
+  .articleCard img {
+    margin-bottom: 1em;
+  }
+  
+  @media (min-width: 1000px) {
+    .articleCard {
+      flex-direction: row;
+    }
+    .articleCard img {
+      aspect-ratio: 1;
+      object-fit: cover;
+      width: 14em;
+      margin-bottom: 0;
+    }
+  }
+  
+  .articleCardTitle{
+    margin-top: -.25em;
+    margin-bottom: 0;
+  }
+  
+  .articleCardContent {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .articleCardBody {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0px;
+  }
+  

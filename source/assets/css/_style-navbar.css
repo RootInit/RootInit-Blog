@@ -1,0 +1,80 @@
+/* ---------- Nav menu ---------- */
+.navBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: var(--bg-color);
+    border-bottom: .15rem solid;
+    margin-bottom: 2em;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+  
+  
+  .navBrand {
+    color: var(--body-color);
+    font-size: 35pt;
+    font-weight: 800;
+  }
+  
+  .navBarList {
+    display: inline-flex;
+    justify-content: space-between;
+    column-gap: 1em;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  @media (min-width: 1000px) {
+    .navBarList {
+      justify-content: initial;
+      width: initial;
+      margin-left: auto;
+      margin-right: 1em;
+    }
+  }
+  
+  .navLink {
+    font-family: "Source Code Pro";
+    font-size: 14pt;
+    color: inherit;
+    transition: none;
+  }
+  
+  #colorModeToggle {
+    color: inherit;
+    border: none;
+    background: none;
+    transition: none;
+    cursor: pointer;
+  }
+  
+  #colorModeToggle svg {
+    height: 35pt;
+  }
+  
+  @media (min-width: 1000px) {
+    #colorModeToggle {
+      order: 6;
+    }
+  }
+  
+  #colorModeToggle:hover {
+    color: var(--emphasis-secondary);
+  }
+  
+  .navbarHide {
+    transform: translateY(0);
+    transition: .25s;
+    transition-property: transform;
+  }
+  
+  .navbarShow {
+    transform: translateY(-100%);
+    transition: .25s;
+    transition-property: transform;
+  }
+  
