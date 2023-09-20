@@ -27,7 +27,7 @@
 <body>
   {{ template "navbar.html" . }}
   <div class="pageContent">
-    {{ template "sidebar.html" }}
+    {{ template "sidebar.html" . }}
     <div class="mainBody">
       <section class="articlesSection">
         <h1>{{.Primary.Title}}</h1>
@@ -49,6 +49,9 @@
             </div>
           </div>
         </div>
+        {{ end }}
+        {{ if eq (len .Primary.Cards) 0 }}
+          <div><span>*Crickets*</span></div>
         {{ end }}
       </section>
       <div class="articleNav">

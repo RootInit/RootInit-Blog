@@ -32,26 +32,22 @@ func (sG StaticGen) processCss(m *minify.M, src, dest string) error {
 		return err
 	}
 	// Left Merge CSS files imported with @import
-	if sG.config.OutputOpts.MergeCSS {
-		importRegex := regexp.MustCompile(`(?m)^@import\s+"(_[\w\-\\\/]+\.css)";$`)
-		cssImports := importRegex.FindAllSubmatch(fileBytes, 64)
-		for _, imprt := range cssImports {
-			// imprt[0] == import statement imprt[1] == imported file
-			impPath := path.Join(filepath.Dir(src), string(imprt[1]))
-			importBytes, err := os.ReadFile(impPath)
-			if err != nil {
-				log.Println("Warning: Unable to resolve CSS import:", string(imprt[1]))
-				continue
-			}
-			fileBytes = bytes.Replace(fileBytes, imprt[0], importBytes, 1)
+	importRegex := regexp.MustCompile(`(?m)^@import\s+"(_[\w\-\\\/]+\.css)";$`)
+	cssImports := importRegex.FindAllSubmatch(fileBytes, 64)
+	for _, imprt := range cssImports {
+		// imprt[0] == import statement imprt[1] == imported file
+		impPath := path.Join(filepath.Dir(src), string(imprt[1]))
+		importBytes, err := os.ReadFile(impPath)
+		if err != nil {
+			log.Println("Warning: Unable to resolve CSS import:", string(imprt[1]))
+			continue
 		}
+		fileBytes = bytes.Replace(fileBytes, imprt[0], importBytes, 1)
 	}
 	// Minify CSS
-	if sG.config.OutputOpts.MinifyCSS {
-		fileBytes, err = m.Bytes("css", fileBytes)
-		if err != nil {
-			return err
-		}
+	fileBytes, err = m.Bytes("css", fileBytes)
+	if err != nil {
+		return err
 	}
 	err = writeFile(dest, fileBytes)
 	return err
@@ -64,40 +60,34 @@ func (sG StaticGen) processHtml(m *minify.M, src, dest string) error {
 		return err
 	}
 	// Inline SVG file <object> embeds
-	if sG.config.OutputOpts.InlineSVG {
-		assetDir := path.Join(
-			sG.config.SourcePaths.Root,
-			`assets`,
-		)
-		svgObgRegex := regexp.MustCompile(`(?m)<object\s+data="([\w\-\\\/]+\.svg)"><\/object>`)
-		svgObjects := svgObgRegex.FindAllSubmatch(fileBytes, 64)
-		for _, imprt := range svgObjects {
-			// imprt[0] == import statement
-			// imprt[1] == imported file
-			impPath := path.Join(assetDir, string(imprt[1]))
-			importBytes, err := os.ReadFile(impPath)
-			if err != nil {
-				log.Println("Warning: Unable to resolve SVG object embed:", string(imprt[1]))
-				continue
-			}
-			if sG.config.OutputOpts.MinifySVG {
-				importBytes, err = m.Bytes("svg", importBytes)
-				if err != nil {
-					return err
-				}
-			}
-			fileBytes = bytes.Replace(
-				fileBytes, imprt[0], importBytes, 1,
-			)
+	assetDir := path.Join(
+		sG.config.SourcePaths.Root,
+		`assets`,
+	)
+	svgObgRegex := regexp.MustCompile(`(?m)<object\s+data="([\w\-\\\/]+\.svg)"><\/object>`)
+	svgObjects := svgObgRegex.FindAllSubmatch(fileBytes, 64)
+	for _, imprt := range svgObjects {
+		// imprt[0] == import statement
+		// imprt[1] == imported file
+		impPath := path.Join(assetDir, string(imprt[1]))
+		importBytes, err := os.ReadFile(impPath)
+		if err != nil {
+			log.Println("Warning: Unable to resolve SVG object embed:", string(imprt[1]))
+			continue
 		}
-
-	}
-	// Minify HTML
-	if sG.config.OutputOpts.MinifyHTML {
-		fileBytes, err = m.Bytes("html", fileBytes)
+		importBytes, err = m.Bytes("svg", importBytes)
 		if err != nil {
 			return err
 		}
+		fileBytes = bytes.Replace(
+			fileBytes, imprt[0], importBytes, 1,
+		)
+	}
+
+	// Minify HTML
+	fileBytes, err = m.Bytes("html", fileBytes)
+	if err != nil {
+		return err
 	}
 	err = writeFile(dest, fileBytes)
 	return err
@@ -109,11 +99,9 @@ func (sG StaticGen) processJs(m *minify.M, src, dest string) error {
 	if err != nil {
 		return err
 	}
-	if sG.config.OutputOpts.MinifyJS {
-		fileBytes, err = m.Bytes("js", fileBytes)
-		if err != nil {
-			return err
-		}
+	fileBytes, err = m.Bytes("js", fileBytes)
+	if err != nil {
+		return err
 	}
 	err = writeFile(dest, fileBytes)
 	return err
@@ -125,11 +113,9 @@ func (sG StaticGen) processSvg(m *minify.M, src, dest string) error {
 	if err != nil {
 		return err
 	}
-	if sG.config.OutputOpts.MinifySVG {
-		fileBytes, err = m.Bytes("svg", fileBytes)
-		if err != nil {
-			return err
-		}
+	fileBytes, err = m.Bytes("svg", fileBytes)
+	if err != nil {
+		return err
 	}
 	err = writeFile(dest, fileBytes)
 	return err

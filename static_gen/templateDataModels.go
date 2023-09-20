@@ -13,12 +13,14 @@ type headTmplData struct {
 }
 
 type sidebarTmplData struct {
-	ArticleTags []tagData
+	Tags       []tagData
+	Categories []categoryData
 }
 
 func (sG StaticGen) makeSidebarData() sidebarTmplData {
 	sbData := sidebarTmplData{
-		ArticleTags: sG.convertTags(&sG.resources.tagCache.List),
+		Tags:       sG.convertTags(&sG.resources.tagCache.List),
+		Categories: sG.convertCategories(&sG.resources.categoryCache.List),
 	}
 	// TODO Future additions...
 	return sbData
@@ -80,21 +82,44 @@ type tagData struct {
 
 /* Converts a models.Tag into a tagTmplData */
 func (sG StaticGen) convertTag(t *models.Tag) tagData {
-	comment := tagData{
+	tag := tagData{
 		Name: t.Name,
 		Icon: t.Icon,
-		Link: sG.getTagIndexPagePath(t, 1),
+		Link: sG.getAbsUrl(sG.getTagIndexPagePath(t, 1)),
 	}
-	return comment
+	return tag
 }
 
 /* Converts []models.Tag into a []tagTmplData */
 func (sG StaticGen) convertTags(tags *[]models.Tag) []tagData {
-	tagTmpls := make([]tagData, len(*tags))
+	tagData := make([]tagData, len(*tags))
 	for i, tag := range *tags {
-		tagTmpls[i] = sG.convertTag(&tag)
+		tagData[i] = sG.convertTag(&tag)
 	}
-	return tagTmpls
+	return tagData
+}
+
+type categoryData struct {
+	Name string
+	Link string
+}
+
+/* Converts a models.Tag into a tagTmplData */
+func (sG StaticGen) convertCategory(c *models.Category) categoryData {
+	category := categoryData{
+		Name: c.Name,
+		Link: sG.getAbsUrl(sG.getCategoryIndexPagePath(c, 1)),
+	}
+	return category
+}
+
+/* Converts []models.Tag into a []tagTmplData */
+func (sG StaticGen) convertCategories(categories *[]models.Category) []categoryData {
+	categoryData := make([]categoryData, len(*categories))
+	for i, cat := range *categories {
+		categoryData[i] = sG.convertCategory(&cat)
+	}
+	return categoryData
 }
 
 type cardData struct {

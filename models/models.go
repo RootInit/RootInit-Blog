@@ -27,12 +27,6 @@ type Config struct {
 	OutputOpts struct {
 		PageFileExt string `yaml:"Page_File_Ext"`
 		DateFormat  string `yaml:"Date_Format"`
-		MergeCSS    bool   `yaml:"Merge_CSS"`
-		InlineSVG   bool   `yaml:"Inline_SVG"`
-		MinifyCSS   bool   `yaml:"Minify_CSS"`
-		MinifyJS    bool   `yaml:"Minify_JS"`
-		MinifyHTML  bool   `yaml:"Minify_HTML"`
-		MinifySVG   bool   `yaml:"Minify_SVG"`
 	} `yaml:"Output_Settings"`
 
 	Templates struct {

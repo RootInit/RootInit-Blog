@@ -13,15 +13,20 @@
             with JS disabled.
         </p>
     </section>
+    <section>
+        <h2>Categories</h2>
+        <div class="articleTagContainer">
+                {{range .Sidebar.Categories}}
+                    <div><a class="navLink" href="{{.Link}}">{{.Name}}</a></div>
+                {{end}}
+        </div>
+    </section>
     <section class="sectionTags">
         <h2>Tags</h2>
         <div class="articleTagContainer">
-            <a class="articleTag" href="#">
-                <object type="image/svg+xml" data="assets/icons/tags/code.svg"></object>Programming</a>
-            <a class="articleTag" href="#">
-                <object type="image/svg+xml" data="assets/icons/tags/java.svg"></object>Java</a>
-            {{range .SideBar.Tags}}<a class="articleTag" href="{{.Link}}"><object
-                    data="{{.Icon}}"></object>{{.Name}}</a>{{end}}
+                {{range .Sidebar.Tags}}
+                    <a class="articleTag" href="{{.Link}}"><object data="{{.Icon}}"></object>{{.Name}}</a>
+                {{end}}
         </div>
     </section>
 </div>

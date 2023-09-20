@@ -7,7 +7,7 @@
 @import "_style-sidebar.css";
 @import "_style-articlecard.css";
 @import "_style-article.css";
-@import "_style-highlightjs.css";
+@import "_style-codeblock.css";
 
 .pageContent {
   display: flex;

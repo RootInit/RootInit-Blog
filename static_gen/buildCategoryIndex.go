@@ -12,6 +12,10 @@ func (sG StaticGen) buildCategoryIndex(category models.Category, cards []cardDat
 	pageNum := 1
 	lastIdx := len(cards) - 1
 	var pageCards []cardData
+	if len(cards) == 0 {
+		err := sG.writeCategoryIndexPage(&category, pageNum, pageCards, true)
+		return err
+	}
 	for i, card := range cards {
 		pageCards = append(pageCards, card)
 		// Check if out of cards or at max cards per page

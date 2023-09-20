@@ -30,35 +30,8 @@
     display: inline-block;
     font-family: 'Source Sans Pro';
   }
-    
-  .articleBody .w100 {
-    width: 100%;
-    margin-inline: none;
-  }
-  .articleBody .w50 {
-    width: 50%;
-  }
-  .articleBody .w75 {
-    width: 75%;
-  }
-  .articleBody .w33 {
-    width: 33%;
-  }
-  .articleBody .w25 {
-    width: 25%;
-  }
-  .articleBody .center {
-    margin-inline: auto;
-  }
-  .articleBody .right {
-    float: right;
-    margin-right: 0;
-  }
-  .articleBody .left {
-    float: left;
-    margin-left: 0;
-  }
-  
+ 
+   
   /* ---------- Article Nav ---------- */
   .articleNav {
     width: 100%;

@@ -60,16 +60,14 @@ func (db DB) GetArticleCount() (int, error) {
 	return id, err
 }
 
-/*
-Method to get an article by Id, or of `afterId` is `true` the previous article.
-Call with an ID of `-1` to get the most recient article.
-*/
+// Method to get an article by Id, or of `afterId` is `true` the previous article.
+// Call with an ID of `-1` to get the most recient article.
 func (db DB) GetArticle(id int, beforeId, getComments bool) (models.Article, error) {
 	var article models.Article
 	var err error
 	stmt :=
-		`SELECT 
-		    a.id, 
+		`SELECT
+		    a.id,
 		    a.title,
 			a.url_title,
 		    a.description,
@@ -91,7 +89,7 @@ func (db DB) GetArticle(id int, beforeId, getComments bool) (models.Article, err
 		stmt += ` WHERE a.id = ?`
 	}
 	stmt +=
-		` GROUP BY a.id 
+		` GROUP BY a.id
 		ORDER BY a.id DESC
 		LIMIT 1`
 	row := db.QueryRow(stmt, id)
@@ -144,7 +142,7 @@ func (db DB) NewArticle(
 	defer tx.Rollback()
 	// Insert the article
 	stmt :=
-		`INSERT INTO articles 
+		`INSERT INTO articles
 		(title, url_title, description, category_id, timestamp, body, thumbnail)
 		VALUES (?, ?, ?, ?, ?, ?, ?)`
 	result, err := tx.Exec(stmt, title, urlTitle, desc, categoryId, date, body, thumb)
@@ -193,7 +191,7 @@ func (db DB) UpdateArticle(article *models.Article) error {
 			title = ?,
 			url_title = ?,
 			description = ?,
-			category_id = ?,	
+			category_id = ?,
 			timestamp = ?,
 			body = ?,
 			thumbnail = ?
